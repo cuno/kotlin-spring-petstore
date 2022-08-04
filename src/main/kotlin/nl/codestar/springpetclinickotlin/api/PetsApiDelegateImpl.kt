@@ -16,7 +16,7 @@ val database = listOf(
 @Component
 class PetsApiDelegateImpl : PetsApiDelegate {
 	override fun listPets(limit: Int?): ResponseEntity<List<PetDto>> = ResponseEntity(
-		database, OK
+		limit?.let { database.take(it) } ?: database, OK
 	)
 
 	override fun showPetById(petId: String): ResponseEntity<PetDto> =
