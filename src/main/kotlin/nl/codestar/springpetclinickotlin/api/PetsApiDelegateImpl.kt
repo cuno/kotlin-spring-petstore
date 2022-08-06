@@ -1,5 +1,7 @@
 package nl.codestar.springpetclinickotlin.api
 
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.asFlow
 import nl.codestar.springpetclinickotlin.model.PetDto
 import nl.codestar.springpetclinickotlin.model.PetTypeDto
 import org.springframework.http.HttpStatus.NOT_FOUND
@@ -18,11 +20,9 @@ val database = listOf(
 
 @Component
 class PetsApiDelegateImpl : PetsApiDelegate {
-	override fun listPets(): ResponseEntity<List<PetDto>> = ResponseEntity(
-		database, OK
-	)
+	override fun listPets(): ResponseEntity<Flow<PetDto>> = ResponseEntity(database.asFlow(), OK)
 
-	override fun getPet(petId: Int): ResponseEntity<PetDto> = database.find { it.id == petId }?.let {
+	override suspend fun getPet(petId: Int): ResponseEntity<PetDto> = database.find { it.id == petId }?.let {
 		ResponseEntity(
 			it, OK
 		)

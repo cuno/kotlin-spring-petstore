@@ -12,6 +12,8 @@ group = "nl.codestar"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
+val kotlinxCoroutinesVersion = "1.6.4"
+
 repositories {
 	mavenCentral()
 }
@@ -24,11 +26,14 @@ kotlin {
 }
 
 dependencies {
+	implementation("org.springframework.boot:spring-boot-starter-webflux")
+	implementation("org.springdoc:springdoc-openapi-webflux-ui:1.6.9")
 	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinxCoroutinesVersion")
+	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:$kotlinxCoroutinesVersion")
 	implementation("io.swagger.core.v3:swagger-core:2.2.2")
 	implementation("io.swagger.core.v3:swagger-annotations:2.2.2")
 	implementation("jakarta.annotation:jakarta.annotation-api:2.1.1")
@@ -60,6 +65,7 @@ openApiGenerate {
 			"delegatePattern" to "true",
 			"interfaceOnly" to "false",
 			"dateLibrary" to "java8",
+			"reactive" to "true",
 			"idea" to "true",
 			"swaggerAnnotations" to "false"
 		)
