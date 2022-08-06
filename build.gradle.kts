@@ -46,7 +46,7 @@ tasks.withType<KotlinCompile> {
 
 openApiGenerate {
 	generatorName.set("kotlin-spring")
-	inputSpec.set("$projectDir/src/main/resources/petstore.yml")
+	inputSpec.set("$projectDir/src/main/resources/petclinic.yml")
 	outputDir.set("$buildDir/generated")
 	validateSpec.set(true)
 	packageName.set("nl.codestar.springpetclinickotlin")
