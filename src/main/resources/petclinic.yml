@@ -1884,11 +1884,10 @@ components:
           title: Message
           description: The valiation message.
           type: string
-          example: "[Path '/lastName'] Instance type (null) does not match any allowed primitive type (allowed: [\"string\"])"
+          example: "[Path '/lastName'] Instance type (null) does not match any allowed primitive type"
           readOnly: true
       required:
         - message
-      additionalProperties: true
     Specialty:
       title: Specialty
       description: Fields of specialty of vets.
@@ -2215,3 +2214,4 @@ components:
           example: admin
       required:
         - name
+
