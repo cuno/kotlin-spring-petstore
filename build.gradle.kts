@@ -20,8 +20,8 @@ repositories {
 
 kotlin {
 	sourceSets["main"].apply {
-		kotlin.srcDir("$buildDir/generated/src/main/kotlin/nl/codestar/springpetclinickotlin/api")
-		kotlin.srcDir("$buildDir/generated/src/main/kotlin/nl/codestar/springpetclinickotlin/model")
+		kotlin.srcDir("$buildDir/generated/src/main/kotlin/nl/codestar/petclinic/springkotlin/api")
+		kotlin.srcDir("$buildDir/generated/src/main/kotlin/nl/codestar/petclinic/springkotlin/model")
 	}
 }
 
@@ -54,10 +54,10 @@ openApiGenerate {
 	inputSpec.set("$projectDir/src/main/resources/petclinic.yml")
 	outputDir.set("$buildDir/generated")
 	validateSpec.set(true)
-	packageName.set("nl.codestar.springpetclinickotlin")
-	apiPackage.set("nl.codestar.springpetclinickotlin.api")
-	modelPackage.set("nl.codestar.springpetclinickotlin.model")
-	invokerPackage.set("nl.codestar.springpetclinickotlin")
+	packageName.set("nl.codestar.petclinic.springkotlin")
+	apiPackage.set("nl.codestar.petclinic.springkotlin.api")
+	modelPackage.set("nl.codestar.petclinic.springkotlin.model")
+	invokerPackage.set("nl.codestar.petclinic.springkotlin")
 	modelNameSuffix.set("Dto")
 	configOptions.set(
 		mapOf(

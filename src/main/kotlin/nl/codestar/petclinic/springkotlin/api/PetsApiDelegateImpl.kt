@@ -1,9 +1,9 @@
-package nl.codestar.springpetclinickotlin.api
+package nl.codestar.petclinic.springkotlin.api
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
-import nl.codestar.springpetclinickotlin.model.PetDto
-import nl.codestar.springpetclinickotlin.model.PetTypeDto
+import nl.codestar.petclinic.springkotlin.model.PetDto
+import nl.codestar.petclinic.springkotlin.model.PetTypeDto
 import org.springframework.http.HttpStatus.NOT_FOUND
 import org.springframework.http.HttpStatus.OK
 import org.springframework.http.ResponseEntity

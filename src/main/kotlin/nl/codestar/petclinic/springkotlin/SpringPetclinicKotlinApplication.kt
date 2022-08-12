@@ -1,11 +1,11 @@
-package nl.codestar.springpetclinickotlin
+package nl.codestar.petclinic.springkotlin
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class SpringPetclinicKotlinApplication
+class PetclinicApplication
 
 fun main(args: Array<String>) {
-	runApplication<SpringPetclinicKotlinApplication>(*args)
+	runApplication<PetclinicApplication>(*args)
 }
