@@ -7,7 +7,7 @@ build/**
 !**/src/test/**/build/
 
 ### Vim ###
-.swp
+*.swp
 
 ### STS ###
 .apt_generated
@@ -39,3 +39,9 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Database temp files ###
+/jdbc:*:petclinic.*
+/petclinic.log
+/petclinic.properties
+/petclinic.script

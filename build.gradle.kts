@@ -4,8 +4,10 @@ plugins {
 	id("org.springframework.boot") version "2.7.2"
 	id("io.spring.dependency-management") version "1.0.12.RELEASE"
 	id("org.openapi.generator") version "6.0.1"
-	kotlin("jvm") version "1.7.10"
-	kotlin("plugin.spring") version "1.7.10"
+	val kotlinVersion ="1.7.10"
+	kotlin("plugin.jpa") version kotlinVersion
+	kotlin("jvm") version kotlinVersion
+	kotlin("plugin.spring") version kotlinVersion
 }
 
 group = "nl.codestar"
@@ -26,6 +28,7 @@ kotlin {
 }
 
 dependencies {
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	implementation("org.springdoc:springdoc-openapi-webflux-ui:1.6.9")
 	implementation("org.springframework.boot:spring-boot-starter-web")
@@ -38,6 +41,11 @@ dependencies {
 	implementation("io.swagger.core.v3:swagger-annotations:2.2.2")
 	implementation("jakarta.annotation:jakarta.annotation-api:2.1.1")
 	runtimeOnly("javax.annotation:javax.annotation-api:1.3.2")
+
+	runtimeOnly("org.hsqldb:hsqldb")
+	runtimeOnly("mysql:mysql-connector-java")
+	runtimeOnly("org.postgresql:postgresql")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
