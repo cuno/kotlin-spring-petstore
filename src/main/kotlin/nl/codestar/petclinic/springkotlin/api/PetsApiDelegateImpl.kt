@@ -3,10 +3,11 @@ package nl.codestar.petclinic.springkotlin.api
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.map
+import nl.codestar.petclinic.generated.springkotlin.api.PetsApiDelegate
+import nl.codestar.petclinic.generated.springkotlin.model.PetDto
+import nl.codestar.petclinic.generated.springkotlin.model.PetTypeDto
 import nl.codestar.petclinic.model.Pet
 import nl.codestar.petclinic.service.ClinicService
-import nl.codestar.petclinic.springkotlin.model.PetDto
-import nl.codestar.petclinic.springkotlin.model.PetTypeDto
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus.*
 import org.springframework.http.ResponseEntity
