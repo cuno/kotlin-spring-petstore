@@ -47,8 +47,8 @@ class ClinicService @Autowired constructor(
 
 	@Transactional
 	@Throws(DataAccessException::class)
-	fun deletePet(pet: Pet?) {
-		petRepository.delete(pet!!)
+	fun deletePet(pet: Pet) {
+		petRepository.delete(pet)
 	}
 
 	@Transactional(readOnly = true)
@@ -74,8 +74,8 @@ class ClinicService @Autowired constructor(
 
 	@Transactional
 	@Throws(DataAccessException::class)
-	fun deleteVisit(visit: Visit?) {
-		visitRepository.delete(visit!!)
+	fun deleteVisit(visit: Visit) {
+		visitRepository.delete(visit)
 	}
 
 	@Transactional(readOnly = true)
@@ -107,8 +107,8 @@ class ClinicService @Autowired constructor(
 
 	@Transactional
 	@Throws(DataAccessException::class)
-	fun deleteVet(vet: Vet?) {
-		vetRepository.delete(vet!!)
+	fun deleteVet(vet: Vet) {
+		vetRepository.delete(vet)
 	}
 
 	@Transactional(readOnly = true)
@@ -119,8 +119,8 @@ class ClinicService @Autowired constructor(
 
 	@Transactional
 	@Throws(DataAccessException::class)
-	fun deleteOwner(owner: Owner?) {
-		ownerRepository.delete(owner!!)
+	fun deleteOwner(owner: Owner) {
+		ownerRepository.delete(owner)
 	}
 
 	@Transactional(readOnly = true)
@@ -151,8 +151,8 @@ class ClinicService @Autowired constructor(
 
 	@Transactional
 	@Throws(DataAccessException::class)
-	fun deletePetType(petType: PetType?) {
-		petTypeRepository.delete(petType!!)
+	fun deletePetType(petType: PetType) {
+		petTypeRepository.delete(petType)
 	}
 
 	@Transactional(readOnly = true)
@@ -183,8 +183,8 @@ class ClinicService @Autowired constructor(
 
 	@Transactional
 	@Throws(DataAccessException::class)
-	fun deleteSpecialty(specialty: Specialty?) {
-		specialtyRepository.delete(specialty!!)
+	fun deleteSpecialty(specialty: Specialty) {
+		specialtyRepository.delete(specialty)
 	}
 
 	@Transactional(readOnly = true)
@@ -252,8 +252,8 @@ class ClinicService @Autowired constructor(
 
 	@Transactional(readOnly = true)
 	@Throws(DataAccessException::class)
-	fun findOwnerByLastName(lastName: String?): Collection<Owner> {
-		return ownerRepository.findByLastName(lastName!!)
+	fun findOwnerByLastName(lastName: String): Collection<Owner> {
+		return ownerRepository.findByLastName(lastName)
 	}
 
 	@Transactional(readOnly = true)
