@@ -19,7 +19,9 @@ import nl.codestar.petclinic.model.Pet
 import nl.codestar.petclinic.model.PetType
 import org.springframework.dao.DataAccessException
 import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.data.jpa.repository.Modifying
 import org.springframework.data.jpa.repository.Query
+import org.springframework.data.repository.query.Param
 import org.springframework.stereotype.Repository
 import java.util.*
 
@@ -81,5 +83,7 @@ interface PetRepository : JpaRepository<Pet, Int> {
 	 * @param pet the `Pet` to delete
 	 */
 	@Throws(DataAccessException::class)
-	override fun delete(pet: Pet)
+	@Modifying
+	@Query("DELETE FROM Pet p WHERE p = :pet")
+	override fun delete(@Param("pet") pet: Pet)
 }
