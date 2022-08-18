@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 import org.springframework.transaction.annotation.EnableTransactionManagement
 
 @SpringBootApplication(
-	scanBasePackages = ["nl.codestar.petclinic"]
+	scanBasePackages = ["nl.codestar.petclinic", "mapper"]
 )
 @EnableJpaRepositories("nl.codestar.petclinic.model", "nl.codestar.petclinic.repository")
 @EntityScan("nl.codestar.petclinic.model")

@@ -8,6 +8,7 @@ plugins {
 	kotlin("plugin.jpa") version kotlinVersion
 	kotlin("jvm") version kotlinVersion
 	kotlin("plugin.spring") version kotlinVersion
+	kotlin("kapt") version kotlinVersion
 }
 
 group = "nl.codestar"
@@ -44,6 +45,10 @@ dependencies {
 	runtimeOnly("org.hsqldb:hsqldb")
 	runtimeOnly("mysql:mysql-connector-java")
 	runtimeOnly("org.postgresql:postgresql")
+	compileOnly("org.avaje:logback:1.0")
+	val mapstructVersion = "1.5.2.Final"
+	implementation("org.mapstruct:mapstruct:$mapstructVersion")
+	kapt("org.mapstruct:mapstruct-processor:$mapstructVersion")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
